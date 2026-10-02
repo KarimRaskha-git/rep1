@@ -1,0 +1,2963 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PC Build — каталог комплектующих для сборки ПК</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --blue: #1a6dff;
+        --blue-d: #0d4fd6;
+        --dark: #0f1420;
+        --dark2: #1b2334;
+        --bg: #f5f6f8;
+        --border: #e4e7ee;
+        --text: #151922;
+        --muted: #7a8194;
+        --green: #12a150;
+        --red: #e5484d;
+        --radius: 12px;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        font-size: 14px;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: inherit;
+        font-size: 14px;
+      }
+      input,
+      select {
+        font-family: inherit;
+        font-size: 14px;
+        outline: none;
+      }
+      img {
+        max-width: 100%;
+      }
+
+      /* ---------- HEADER ---------- */
+      .header {
+        background: var(--dark);
+        color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .header-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        padding: 0 20px;
+        height: 64px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-weight: 700;
+        font-size: 17px;
+        white-space: nowrap;
+      }
+      .logo-mark {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #4d8dff, #1a6dff);
+        display: grid;
+        place-items: center;
+        font-size: 15px;
+        box-shadow: 0 2px 8px rgba(26, 109, 255, 0.5);
+      }
+      .nav {
+        display: flex;
+        gap: 22px;
+      }
+      .nav a {
+        color: #c2cbdd;
+        padding: 22px 0;
+        border-bottom: 2px solid transparent;
+        transition: 0.15s;
+        white-space: nowrap;
+      }
+      .nav a:hover {
+        color: #fff;
+      }
+      .nav a.active {
+        color: #fff;
+        border-bottom-color: var(--blue);
+      }
+      .search {
+        flex: 1;
+        max-width: 400px;
+        margin-left: auto;
+      }
+      .search input {
+        width: 100%;
+        height: 38px;
+        border-radius: 9px;
+        border: 1px solid #2b3446;
+        background: #1b2334;
+        color: #fff;
+        padding: 0 14px;
+      }
+      .search input::placeholder {
+        color: #76809a;
+      }
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-left: auto;
+      }
+      .h-action {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        color: #c2cbdd;
+        font-size: 13px;
+        transition: 0.15s;
+      }
+      .h-action:hover {
+        color: #fff;
+      }
+      .cart-badge {
+        position: relative;
+      }
+      .cart-badge span {
+        position: absolute;
+        top: -8px;
+        right: -10px;
+        background: var(--blue);
+        color: #fff;
+        font-size: 11px;
+        min-width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        display: grid;
+        place-items: center;
+        padding: 0 5px;
+        font-weight: 600;
+      }
+
+      /* ---------- LAYOUT ---------- */
+      .wrap {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .page {
+        display: none;
+        padding: 26px 0 60px;
+      }
+      .page.active {
+        display: block;
+      }
+      .section-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 34px 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .section-title:first-child {
+        margin-top: 0;
+      }
+      .section-title .link {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--blue);
+      }
+
+      /* ---------- BUTTONS ---------- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 40px;
+        padding: 0 18px;
+        border-radius: 9px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: 0.15s;
+        white-space: nowrap;
+      }
+      .btn-primary {
+        background: var(--blue);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: var(--blue-d);
+      }
+      .btn-outline {
+        border: 1px solid var(--border);
+        background: #fff;
+        color: var(--text);
+      }
+      .btn-outline:hover {
+        border-color: var(--blue);
+        color: var(--blue);
+      }
+      .btn-ghost {
+        color: var(--blue);
+        background: #eef4ff;
+      }
+      .btn-ghost:hover {
+        background: #e0ebff;
+      }
+      .btn-danger {
+        color: var(--red);
+        background: #fdeaea;
+      }
+      .btn-danger:hover {
+        background: #fbdcdc;
+      }
+      .btn:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+      .btn-sm {
+        height: 32px;
+        padding: 0 12px;
+        font-size: 13px;
+        border-radius: 8px;
+      }
+      .btn-block {
+        width: 100%;
+      }
+
+      /* ---------- HERO ---------- */
+      .hero {
+        background: linear-gradient(
+          115deg,
+          #0b1220 0%,
+          #132a5c 60%,
+          #1a4ea8 100%
+        );
+        border-radius: 18px;
+        color: #fff;
+        padding: 54px 56px;
+        position: relative;
+        overflow: hidden;
+        margin-top: 8px;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        right: -60px;
+        top: -60px;
+        width: 420px;
+        height: 420px;
+        background: radial-gradient(
+          circle,
+          rgba(77, 141, 255, 0.45),
+          transparent 65%
+        );
+      }
+      .hero h1 {
+        font-size: 38px;
+        line-height: 1.15;
+        font-weight: 800;
+        max-width: 560px;
+        position: relative;
+        z-index: 1;
+      }
+      .hero p {
+        margin: 16px 0 26px;
+        color: #b9c6e0;
+        max-width: 480px;
+        position: relative;
+        z-index: 1;
+      }
+      .hero .btn {
+        position: relative;
+        z-index: 1;
+        height: 46px;
+        padding: 0 28px;
+        font-size: 15px;
+      }
+      .hero-feats {
+        display: flex;
+        gap: 34px;
+        margin-top: 38px;
+        position: relative;
+        z-index: 1;
+        flex-wrap: wrap;
+      }
+      .hero-feat {
+        display: flex;
+        gap: 11px;
+        align-items: flex-start;
+        max-width: 220px;
+      }
+      .hero-feat .ic {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        background: rgba(77, 141, 255, 0.2);
+        display: grid;
+        place-items: center;
+        font-size: 16px;
+        flex: none;
+      }
+      .hero-feat b {
+        display: block;
+        font-size: 13.5px;
+        margin-bottom: 2px;
+      }
+      .hero-feat small {
+        color: #a9b7d4;
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      /* ---------- CATEGORY TILES ---------- */
+      .cat-grid {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 14px;
+      }
+      .cat-tile {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px 10px;
+        text-align: center;
+        transition: 0.15s;
+        cursor: pointer;
+      }
+      .cat-tile:hover {
+        border-color: var(--blue);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(26, 109, 255, 0.12);
+      }
+      .cat-tile .ic {
+        font-size: 26px;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .cat-tile span {
+        font-size: 12.5px;
+        color: var(--text);
+        line-height: 1.3;
+        display: block;
+      }
+
+      /* ---------- PRODUCT GRID ---------- */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(206px, 1fr));
+        gap: 16px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transition: 0.15s;
+      }
+      .card:hover {
+        border-color: #c9d4ea;
+        box-shadow: 0 8px 24px rgba(20, 40, 80, 0.08);
+      }
+      .card-img {
+        height: 130px;
+        border-radius: 10px;
+        background: linear-gradient(140deg, #f2f5fb, #e6ecf7);
+        display: grid;
+        place-items: center;
+        font-size: 46px;
+        margin-bottom: 12px;
+        cursor: pointer;
+      }
+      .card-brand {
+        font-size: 11.5px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        margin-bottom: 3px;
+      }
+      .card-name {
+        font-weight: 600;
+        font-size: 13.5px;
+        line-height: 1.35;
+        margin-bottom: 7px;
+        min-height: 37px;
+        cursor: pointer;
+      }
+      .card-name:hover {
+        color: var(--blue);
+      }
+      .card-rating {
+        font-size: 12px;
+        color: #f5a623;
+        margin-bottom: 8px;
+      }
+      .card-rating i {
+        color: var(--muted);
+        font-style: normal;
+      }
+      .card-price {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .card-stock {
+        font-size: 12px;
+        margin-bottom: 11px;
+      }
+      .in-stock {
+        color: var(--green);
+      }
+      .no-stock {
+        color: var(--red);
+      }
+      .card .btn {
+        margin-top: auto;
+      }
+      .card-fav {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 16px;
+        color: #c3cbdb;
+        z-index: 2;
+      }
+      .card-fav:hover,
+      .card-fav.on {
+        color: var(--red);
+      }
+
+      /* ---------- CATALOG LAYOUT ---------- */
+      .cat-layout {
+        display: grid;
+        grid-template-columns: 262px 1fr;
+        gap: 22px;
+        align-items: start;
+      }
+      .sidebar {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px;
+        position: sticky;
+        top: 88px;
+      }
+      .filter-block {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+      }
+      .filter-block:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .filter-title {
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 11px;
+      }
+      .check {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 5px 0;
+        cursor: pointer;
+        font-size: 13.5px;
+        color: #3c4356;
+      }
+      .check input {
+        width: 16px;
+        height: 16px;
+        accent-color: var(--blue);
+        cursor: pointer;
+      }
+      .check span.count {
+        margin-left: auto;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .price-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .price-row input {
+        width: 100%;
+        height: 36px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0 10px;
+      }
+      .price-row input:focus {
+        border-color: var(--blue);
+      }
+      .toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .toolbar .count {
+        color: var(--muted);
+        font-size: 13.5px;
+      }
+      .toolbar select {
+        height: 38px;
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        padding: 0 12px;
+        background: #fff;
+        cursor: pointer;
+      }
+      .empty {
+        background: #fff;
+        border: 1px dashed var(--border);
+        border-radius: var(--radius);
+        padding: 56px;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      /* ---------- BUILD ---------- */
+      .build-layout {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 22px;
+        align-items: start;
+      }
+      .slot {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 14px 16px;
+        margin-bottom: 10px;
+      }
+      .slot-ic {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: #f1f4fa;
+        display: grid;
+        place-items: center;
+        font-size: 19px;
+        flex: none;
+      }
+      .slot-body {
+        flex: 1;
+        min-width: 0;
+      }
+      .slot-label {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 2px;
+      }
+      .slot-name {
+        font-weight: 600;
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .slot-name.empty-name {
+        color: var(--muted);
+        font-weight: 400;
+      }
+      .slot-price {
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .summary {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        position: sticky;
+        top: 88px;
+      }
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        font-size: 13.5px;
+        color: #4a5164;
+      }
+      .summary-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        border-top: 1px solid var(--border);
+        margin-top: 10px;
+        padding-top: 14px;
+        font-size: 15px;
+      }
+      .summary-total b {
+        font-size: 24px;
+        font-weight: 800;
+      }
+      .compat {
+        margin-top: 16px;
+        border-radius: 10px;
+        padding: 12px 14px;
+        font-size: 13px;
+      }
+      .compat.ok {
+        background: #e9f8f0;
+        color: #0b7a3d;
+      }
+      .compat.bad {
+        background: #fdecec;
+        color: #b3261e;
+      }
+      .compat ul {
+        margin: 8px 0 0 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .compat li {
+        line-height: 1.4;
+      }
+
+      /* ---------- CART ---------- */
+      .cart-layout {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 22px;
+        align-items: start;
+      }
+      .cart-item {
+        display: flex;
+        gap: 16px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 16px;
+        margin-bottom: 12px;
+        align-items: center;
+      }
+      .cart-item .thumb {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        background: #f1f4fa;
+        display: grid;
+        place-items: center;
+        font-size: 32px;
+        flex: none;
+      }
+      .cart-item .info {
+        flex: 1;
+        min-width: 0;
+      }
+      .cart-item .info b {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 3px;
+      }
+      .cart-item .info small {
+        color: var(--muted);
+        font-size: 12.5px;
+      }
+      .qty {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        overflow: hidden;
+      }
+      .qty button {
+        width: 32px;
+        height: 34px;
+        font-size: 16px;
+        color: #4a5164;
+      }
+      .qty button:hover {
+        background: #f2f5fa;
+      }
+      .qty span {
+        width: 36px;
+        text-align: center;
+        font-weight: 600;
+      }
+      .cart-item .sum {
+        font-weight: 700;
+        font-size: 16px;
+        width: 110px;
+        text-align: right;
+      }
+
+      /* ---------- MODAL ---------- */
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 16, 28, 0.55);
+        backdrop-filter: blur(3px);
+        z-index: 300;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .modal.active {
+        display: flex;
+      }
+      .modal-box {
+        background: #fff;
+        border-radius: 16px;
+        max-width: 900px;
+        width: 100%;
+        max-height: 88vh;
+        overflow: auto;
+        position: relative;
+        padding: 28px;
+      }
+      .modal-close {
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        font-size: 26px;
+        color: var(--muted);
+        line-height: 1;
+        z-index: 2;
+      }
+      .modal-close:hover {
+        color: var(--text);
+      }
+      .picker-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .picker-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border: 1px solid var(--border);
+        border-radius: 11px;
+        padding: 12px 14px;
+        transition: 0.15s;
+      }
+      .picker-row:hover {
+        border-color: var(--blue);
+        background: #fafbff;
+      }
+      .picker-row.disabled {
+        opacity: 0.5;
+        background: #fafafa;
+      }
+      .picker-row .ic {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: #f1f4fa;
+        display: grid;
+        place-items: center;
+        font-size: 20px;
+        flex: none;
+      }
+      .picker-row .txt {
+        flex: 1;
+        min-width: 0;
+      }
+      .picker-row .txt b {
+        display: block;
+        font-size: 13.5px;
+      }
+      .picker-row .txt small {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .picker-row .pr {
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      /* ---------- PRODUCT DETAIL ---------- */
+      .pd {
+        display: grid;
+        grid-template-columns: 340px 1fr;
+        gap: 32px;
+      }
+      .pd-img {
+        height: 300px;
+        border-radius: 14px;
+        background: linear-gradient(140deg, #f2f5fb, #e6ecf7);
+        display: grid;
+        place-items: center;
+        font-size: 110px;
+      }
+      .pd h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .pd .rating {
+        color: #f5a623;
+        font-size: 13.5px;
+        margin-bottom: 14px;
+      }
+      .pd .rating i {
+        color: var(--muted);
+        font-style: normal;
+      }
+      .pd .price {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+      .pd .actions {
+        display: flex;
+        gap: 12px;
+        margin: 20px 0;
+      }
+      .spec-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 22px;
+        font-size: 13.5px;
+      }
+      .spec-table td {
+        padding: 9px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .spec-table td:first-child {
+        color: var(--muted);
+        width: 45%;
+      }
+      .tabs {
+        display: flex;
+        gap: 26px;
+        border-bottom: 1px solid var(--border);
+        margin-top: 26px;
+      }
+      .tabs button {
+        padding: 12px 0;
+        font-weight: 600;
+        color: var(--muted);
+        border-bottom: 2px solid transparent;
+      }
+      .tabs button.active {
+        color: var(--blue);
+        border-bottom-color: var(--blue);
+      }
+
+      /* ---------- AUTH ---------- */
+      .auth-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        max-width: 900px;
+        margin: 30px auto;
+      }
+      .auth-side {
+        background: linear-gradient(150deg, #0b1220, #173a7a);
+        color: #fff;
+        padding: 46px 40px;
+      }
+      .auth-side h2 {
+        font-size: 27px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 14px;
+      }
+      .auth-side p {
+        color: #b0bfdd;
+        font-size: 13.5px;
+        margin-bottom: 26px;
+      }
+      .auth-feat {
+        display: flex;
+        gap: 11px;
+        margin-bottom: 18px;
+        align-items: flex-start;
+      }
+      .auth-feat .ic {
+        width: 32px;
+        height: 32px;
+        border-radius: 9px;
+        background: rgba(77, 141, 255, 0.22);
+        display: grid;
+        place-items: center;
+        flex: none;
+      }
+      .auth-feat b {
+        display: block;
+        font-size: 13.5px;
+      }
+      .auth-feat small {
+        color: #a5b3d0;
+        font-size: 12px;
+      }
+      .auth-form {
+        padding: 40px 44px;
+      }
+      .auth-form h3 {
+        font-size: 21px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .auth-form > .sub {
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 22px;
+      }
+      .field {
+        margin-bottom: 15px;
+      }
+      .field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .field input {
+        width: 100%;
+        height: 42px;
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        padding: 0 13px;
+        background: #fafbfd;
+      }
+      .field input:focus {
+        border-color: var(--blue);
+        background: #fff;
+      }
+      .field .err {
+        color: var(--red);
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+      .field.invalid input {
+        border-color: var(--red);
+        background: #fff7f7;
+      }
+      .field.invalid .err {
+        display: block;
+      }
+      .switch-line {
+        text-align: center;
+        margin-top: 18px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .switch-line a {
+        color: var(--blue);
+        font-weight: 600;
+      }
+
+      /* ---------- ABOUT / BLOG ---------- */
+      .text-page {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 38px 42px;
+        max-width: 900px;
+      }
+      .text-page h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+      .text-page h3 {
+        font-size: 17px;
+        margin: 24px 0 10px;
+      }
+      .text-page p {
+        color: #454c60;
+        margin-bottom: 12px;
+      }
+      .text-page ul {
+        margin: 0 0 14px 20px;
+        color: #454c60;
+      }
+      .text-page li {
+        margin-bottom: 6px;
+      }
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 18px;
+      }
+      .blog-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+      .blog-card .cover {
+        height: 140px;
+        background: linear-gradient(140deg, #dbe6fb, #c5d7f7);
+        display: grid;
+        place-items: center;
+        font-size: 44px;
+      }
+      .blog-card .body {
+        padding: 16px;
+      }
+      .blog-card h4 {
+        font-size: 15px;
+        margin-bottom: 7px;
+      }
+      .blog-card p {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* ---------- FOOTER / TOAST ---------- */
+      .footer {
+        background: var(--dark);
+        color: #8b97ae;
+        margin-top: 60px;
+        padding: 34px 0;
+        font-size: 13px;
+      }
+      .footer-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .footer b {
+        color: #fff;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+      .toast {
+        position: fixed;
+        bottom: 26px;
+        left: 50%;
+        transform: translateX(-50%) translateY(90px);
+        background: var(--dark);
+        color: #fff;
+        padding: 13px 24px;
+        border-radius: 11px;
+        font-size: 13.5px;
+        opacity: 0;
+        transition: 0.28s;
+        z-index: 400;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        pointer-events: none;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      @media (max-width: 1080px) {
+        .cat-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .cat-layout,
+        .build-layout,
+        .cart-layout {
+          grid-template-columns: 1fr;
+        }
+        .sidebar,
+        .summary {
+          position: static;
+        }
+        .pd {
+          grid-template-columns: 1fr;
+        }
+        .auth-layout {
+          grid-template-columns: 1fr;
+        }
+        .auth-side {
+          display: none;
+        }
+        .nav {
+          display: none;
+        }
+      }
+      @media (max-width: 640px) {
+        .cat-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .hero {
+          padding: 34px 24px;
+        }
+        .hero h1 {
+          font-size: 26px;
+        }
+        .wrap {
+          padding: 0 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo" data-nav="home"
+          ><span class="logo-mark">🖥</span> PC Build</a
+        >
+        <nav class="nav" id="mainNav">
+          <a data-nav="catalog">Каталог</a>
+          <a data-nav="build">Сборка ПК</a>
+          <a data-nav="about">О нас</a>
+          <a data-nav="blog">Блог</a>
+        </nav>
+        <div class="search">
+          <input
+            id="globalSearch"
+            type="text"
+            placeholder="Поиск по товарам..."
+          />
+        </div>
+        <div class="header-actions">
+          <a class="h-action" id="authBtn"
+            >👤 <span id="userLabel">Войти / Регистрация</span></a
+          >
+          <a class="h-action cart-badge" data-nav="cart"
+            >🛒<span id="cartCount">0</span></a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap" id="app"></main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <b>PC Build</b>
+          Учебный проект — каталог комплектующих<br />с проверкой совместимости.
+        </div>
+        <div>
+          <b>Разделы</b>
+          <a data-nav="catalog">Каталог</a> ·
+          <a data-nav="build">Сборка ПК</a> · <a data-nav="about">О нас</a> ·
+          <a data-nav="blog">Блог</a>
+        </div>
+        <div>
+          <b>Важно</b>
+          Все данные вымышлены.<br />Персональные данные не собираются.
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal" id="modal">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+      /* =========================================================================
+   PC Build — учебный проект
+   Хранилище: localStorage (данные сохраняются между запусками).
+   Персональные данные не используются: логины/пароли — только демонстрация.
+   ========================================================================= */
+
+      /* ------------------------- СПРАВОЧНИК КАТЕГОРИЙ ------------------------- */
+      const CATEGORIES = [
+        { id: "cpu", name: "Процессоры", icon: "🧩" },
+        { id: "gpu", name: "Видеокарты", icon: "🎮" },
+        { id: "motherboard", name: "Материнские платы", icon: "🔌" },
+        { id: "ram", name: "Оперативная память", icon: "📊" },
+        { id: "storage", name: "SSD и HDD", icon: "💾" },
+        { id: "psu", name: "Блоки питания", icon: "⚡" },
+        { id: "case", name: "Корпуса", icon: "🖥️" },
+        { id: "cooling", name: "Охлаждение", icon: "❄️" },
+      ];
+      const catName = (id) =>
+        (CATEGORIES.find((c) => c.id === id) || {}).name || id;
+      const catIcon = (id) =>
+        (CATEGORIES.find((c) => c.id === id) || {}).icon || "📦";
+
+      /* --------------------------- КАТАЛОГ ТОВАРОВ ---------------------------- */
+      const COMPONENTS = [
+        /* ---------- Процессоры ---------- */
+        {
+          id: "cpu-1",
+          cat: "cpu",
+          name: "AMD Ryzen 5 5600",
+          brand: "AMD",
+          price: 12990,
+          stock: 12,
+          socket: "AM4",
+          cores: 6,
+          threads: 12,
+          freq: 3.5,
+          tdp: 65,
+          ramType: ["DDR4"],
+          rating: 4.8,
+          reviews: 124,
+          desc: "6-ядерный процессор с 12 потоками. Оптимальный выбор для игр и работы, отличное соотношение цены и производительности.",
+        },
+        {
+          id: "cpu-2",
+          cat: "cpu",
+          name: "Intel Core i5-12400F",
+          brand: "Intel",
+          price: 10990,
+          stock: 18,
+          socket: "LGA1700",
+          cores: 6,
+          threads: 12,
+          freq: 2.5,
+          tdp: 65,
+          ramType: ["DDR4", "DDR5"],
+          rating: 4.7,
+          reviews: 87,
+          desc: "6 производительных ядер Alder Lake. Энергоэффективный процессор для сборки среднего уровня.",
+        },
+        {
+          id: "cpu-3",
+          cat: "cpu",
+          name: "AMD Ryzen 7 5700X",
+          brand: "AMD",
+          price: 18990,
+          stock: 7,
+          socket: "AM4",
+          cores: 8,
+          threads: 16,
+          freq: 3.4,
+          tdp: 65,
+          ramType: ["DDR4"],
+          rating: 4.9,
+          reviews: 76,
+          desc: "8 ядер и 16 потоков для монтажа, стриминга и требовательных игр. Низкое энергопотребление.",
+        },
+        {
+          id: "cpu-4",
+          cat: "cpu",
+          name: "Intel Core i7-12700KF",
+          brand: "Intel",
+          price: 24990,
+          stock: 5,
+          socket: "LGA1700",
+          cores: 12,
+          threads: 20,
+          freq: 3.6,
+          tdp: 125,
+          ramType: ["DDR4", "DDR5"],
+          rating: 4.8,
+          reviews: 64,
+          desc: "12 ядер (8P+4E) для максимальной многопоточной производительности. Разблокированный множитель.",
+        },
+        {
+          id: "cpu-5",
+          cat: "cpu",
+          name: "AMD Ryzen 9 5950X",
+          brand: "AMD",
+          price: 36990,
+          stock: 3,
+          socket: "AM4",
+          cores: 16,
+          threads: 32,
+          freq: 3.4,
+          tdp: 105,
+          ramType: ["DDR4"],
+          rating: 4.9,
+          reviews: 42,
+          desc: "16 ядер и 32 потока — флагман для рендеринга, компиляции и профессиональных задач.",
+        },
+        {
+          id: "cpu-6",
+          cat: "cpu",
+          name: "Intel Core i5-13400F",
+          brand: "Intel",
+          price: 28990,
+          stock: 9,
+          socket: "LGA1700",
+          cores: 10,
+          threads: 16,
+          freq: 2.5,
+          tdp: 65,
+          ramType: ["DDR4", "DDR5"],
+          rating: 4.7,
+          reviews: 38,
+          desc: "10 ядер 13-го поколения. Сбалансированное решение для игровой сборки.",
+        },
+
+        /* ---------- Видеокарты ---------- */
+        {
+          id: "gpu-1",
+          cat: "gpu",
+          name: "NVIDIA GeForce RTX 3060",
+          brand: "NVIDIA",
+          price: 32990,
+          stock: 11,
+          memory: 12,
+          memType: "GDDR6",
+          tdp: 170,
+          length: 242,
+          rating: 4.7,
+          reviews: 210,
+          desc: "12 ГБ видеопамяти, поддержка трассировки лучей и DLSS. Универсальная карта для 1080p и 1440p.",
+        },
+        {
+          id: "gpu-2",
+          cat: "gpu",
+          name: "AMD Radeon RX 6600",
+          brand: "AMD",
+          price: 24990,
+          stock: 8,
+          memory: 8,
+          memType: "GDDR6",
+          tdp: 132,
+          length: 200,
+          rating: 4.5,
+          reviews: 96,
+          desc: "Энергоэффективная видеокарта для стабильных 60+ FPS в Full HD.",
+        },
+        {
+          id: "gpu-3",
+          cat: "gpu",
+          name: "NVIDIA GeForce RTX 4070",
+          brand: "NVIDIA",
+          price: 59990,
+          stock: 6,
+          memory: 12,
+          memType: "GDDR6X",
+          tdp: 200,
+          length: 244,
+          rating: 4.9,
+          reviews: 78,
+          desc: "Производительная карта нового поколения с DLSS 3. Уверенные 1440p и вход в 4K.",
+        },
+        {
+          id: "gpu-4",
+          cat: "gpu",
+          name: "NVIDIA GeForce RTX 4060 Ti",
+          brand: "NVIDIA",
+          price: 44990,
+          stock: 9,
+          memory: 8,
+          memType: "GDDR6",
+          tdp: 160,
+          length: 240,
+          rating: 4.6,
+          reviews: 55,
+          desc: "Оптимальна для 1080p с высокой частотой обновления и 1440p на средних настройках.",
+        },
+        {
+          id: "gpu-5",
+          cat: "gpu",
+          name: "AMD Radeon RX 7900 XT",
+          brand: "AMD",
+          price: 89990,
+          stock: 2,
+          memory: 20,
+          memType: "GDDR6",
+          tdp: 315,
+          length: 276,
+          rating: 4.8,
+          reviews: 31,
+          desc: "20 ГБ памяти и высокая производительность в 4K. Требует мощного блока питания.",
+        },
+
+        /* ---------- Материнские платы ---------- */
+        {
+          id: "mb-1",
+          cat: "motherboard",
+          name: "MSI B550-A PRO",
+          brand: "MSI",
+          price: 11990,
+          stock: 14,
+          socket: "AM4",
+          ramType: ["DDR4"],
+          formFactor: "ATX",
+          rating: 4.7,
+          reviews: 143,
+          desc: "Надёжная плата на B550 для процессоров Ryzen. Усиленное питание, M.2 с радиатором.",
+        },
+        {
+          id: "mb-2",
+          cat: "motherboard",
+          name: "Gigabyte B660M DS3H",
+          brand: "Gigabyte",
+          price: 9990,
+          stock: 16,
+          socket: "LGA1700",
+          ramType: ["DDR4"],
+          formFactor: "mATX",
+          rating: 4.5,
+          reviews: 88,
+          desc: "Компактная плата для Intel 12–13 поколения. Хороший выбор для недорогой сборки.",
+        },
+        {
+          id: "mb-3",
+          cat: "motherboard",
+          name: "ASUS PRIME Z690-P",
+          brand: "ASUS",
+          price: 19990,
+          stock: 6,
+          socket: "LGA1700",
+          ramType: ["DDR5"],
+          formFactor: "ATX",
+          rating: 4.6,
+          reviews: 52,
+          desc: "Плата на Z690 с поддержкой DDR5 и разгона. Большой набор портов и слотов M.2.",
+        },
+        {
+          id: "mb-4",
+          cat: "motherboard",
+          name: "ASRock B450M Pro4",
+          brand: "ASRock",
+          price: 7490,
+          stock: 10,
+          socket: "AM4",
+          ramType: ["DDR4"],
+          formFactor: "mATX",
+          rating: 4.4,
+          reviews: 120,
+          desc: "Бюджетная плата для Ryzen с четырьмя слотами памяти и двумя M.2.",
+        },
+        {
+          id: "mb-5",
+          cat: "motherboard",
+          name: "MSI MAG B760 Tomahawk",
+          brand: "MSI",
+          price: 17990,
+          stock: 7,
+          socket: "LGA1700",
+          ramType: ["DDR5"],
+          formFactor: "ATX",
+          rating: 4.8,
+          reviews: 44,
+          desc: "Платформа B760 с DDR5, мощным VRM и развитым охлаждением.",
+        },
+
+        /* ---------- Оперативная память ---------- */
+        {
+          id: "ram-1",
+          cat: "ram",
+          name: "Kingston Fury Beast 16GB",
+          brand: "Kingston",
+          price: 4990,
+          stock: 22,
+          ramType: "DDR4",
+          capacity: 16,
+          speed: 3200,
+          modules: 2,
+          rating: 4.8,
+          reviews: 265,
+          desc: "Комплект 2×8 ГБ DDR4-3200 с радиаторами. Стабильная работа и умеренная цена.",
+        },
+        {
+          id: "ram-2",
+          cat: "ram",
+          name: "Corsair Vengeance 32GB",
+          brand: "Corsair",
+          price: 9990,
+          stock: 12,
+          ramType: "DDR4",
+          capacity: 32,
+          speed: 3600,
+          modules: 2,
+          rating: 4.9,
+          reviews: 134,
+          desc: "2×16 ГБ DDR4-3600 для игровых и рабочих сборок. Поддержка XMP 2.0.",
+        },
+        {
+          id: "ram-3",
+          cat: "ram",
+          name: "Kingston Fury Beast 16GB DDR5",
+          brand: "Kingston",
+          price: 6990,
+          stock: 15,
+          ramType: "DDR5",
+          capacity: 16,
+          speed: 5200,
+          modules: 2,
+          rating: 4.7,
+          reviews: 61,
+          desc: "2×8 ГБ DDR5-5200 для новых платформ. On-die ECC и высокая пропускная способность.",
+        },
+        {
+          id: "ram-4",
+          cat: "ram",
+          name: "G.Skill Trident Z5 32GB",
+          brand: "G.Skill",
+          price: 14990,
+          stock: 5,
+          ramType: "DDR5",
+          capacity: 32,
+          speed: 6000,
+          modules: 2,
+          rating: 4.9,
+          reviews: 47,
+          desc: "2×16 ГБ DDR5-6000 с подсветкой. Максимальная производительность для энтузиастов.",
+        },
+
+        /* ---------- Накопители ---------- */
+        {
+          id: "st-1",
+          cat: "storage",
+          name: "Kingston A2000 500GB",
+          brand: "Kingston",
+          price: 3990,
+          stock: 20,
+          stype: "NVMe SSD",
+          capacity: 500,
+          iface: "M.2 PCIe 3.0",
+          read: 2200,
+          rating: 4.6,
+          reviews: 190,
+          desc: "Быстрый NVMe-накопитель для системы и основных программ.",
+        },
+        {
+          id: "st-2",
+          cat: "storage",
+          name: "Samsung 980 1TB",
+          brand: "Samsung",
+          price: 7990,
+          stock: 13,
+          stype: "NVMe SSD",
+          capacity: 1000,
+          iface: "M.2 PCIe 3.0",
+          read: 3500,
+          rating: 4.9,
+          reviews: 156,
+          desc: "1 ТБ быстрого NVMe-хранилища. Отличная скорость чтения и надёжность.",
+        },
+        {
+          id: "st-3",
+          cat: "storage",
+          name: "WD Blue 2TB HDD",
+          brand: "WD",
+          price: 5490,
+          stock: 17,
+          stype: "HDD",
+          capacity: 2000,
+          iface: "SATA III",
+          read: 180,
+          rating: 4.4,
+          reviews: 210,
+          desc: "Ёмкий жёсткий диск для архивов, фото и видео.",
+        },
+        {
+          id: "st-4",
+          cat: "storage",
+          name: "Crucial P3 Plus 2TB",
+          brand: "Crucial",
+          price: 12990,
+          stock: 8,
+          stype: "NVMe SSD",
+          capacity: 2000,
+          iface: "M.2 PCIe 4.0",
+          read: 5000,
+          rating: 4.8,
+          reviews: 72,
+          desc: "2 ТБ на PCIe 4.0 — максимум места и скорости для игр и работы с данными.",
+        },
+
+        /* ---------- Блоки питания ---------- */
+        {
+          id: "psu-1",
+          cat: "psu",
+          name: "be quiet! System Power 9 600W",
+          brand: "be quiet!",
+          price: 5490,
+          stock: 14,
+          watt: 600,
+          cert: "80+ Bronze",
+          modular: "Нет",
+          rating: 4.7,
+          reviews: 98,
+          desc: "Тихий и надёжный блок питания на 600 Вт для сборок среднего уровня.",
+        },
+        {
+          id: "psu-2",
+          cat: "psu",
+          name: "Corsair RM750e 750W",
+          brand: "Corsair",
+          price: 11990,
+          stock: 9,
+          watt: 750,
+          cert: "80+ Gold",
+          modular: "Полностью",
+          rating: 4.9,
+          reviews: 86,
+          desc: "Модульный БП с сертификатом Gold и тихим вентилятором. Подходит для мощных видеокарт.",
+        },
+        {
+          id: "psu-3",
+          cat: "psu",
+          name: "Deepcool PF500 500W",
+          brand: "Deepcool",
+          price: 3290,
+          stock: 21,
+          watt: 500,
+          cert: "80+ White",
+          modular: "Нет",
+          rating: 4.3,
+          reviews: 150,
+          desc: "Бюджетный блок питания для офисных и простых игровых сборок.",
+        },
+        {
+          id: "psu-4",
+          cat: "psu",
+          name: "Seasonic Focus GX-850 850W",
+          brand: "Seasonic",
+          price: 14990,
+          stock: 4,
+          watt: 850,
+          cert: "80+ Gold",
+          modular: "Полностью",
+          rating: 5.0,
+          reviews: 64,
+          desc: "850 Вт с запасом для флагманских видеокарт. Полностью модульная конструкция.",
+        },
+
+        /* ---------- Корпуса ---------- */
+        {
+          id: "cs-1",
+          cat: "case",
+          name: "Deepcool MATREXX 40",
+          brand: "Deepcool",
+          price: 3290,
+          stock: 16,
+          formFactor: "mATX",
+          maxGpu: 320,
+          rating: 4.5,
+          reviews: 112,
+          desc: "Компактный корпус с боковой панелью из закалённого стекла.",
+        },
+        {
+          id: "cs-2",
+          cat: "case",
+          name: "NZXT H510",
+          brand: "NZXT",
+          price: 6990,
+          stock: 9,
+          formFactor: "ATX",
+          maxGpu: 381,
+          rating: 4.7,
+          reviews: 143,
+          desc: "Минималистичный корпус с продуманной прокладкой кабелей.",
+        },
+        {
+          id: "cs-3",
+          cat: "case",
+          name: "Zalman i3 Neo",
+          brand: "Zalman",
+          price: 4490,
+          stock: 12,
+          formFactor: "ATX",
+          maxGpu: 330,
+          rating: 4.6,
+          reviews: 98,
+          desc: "Корпус с четырьмя предустановленными вентиляторами и подсветкой.",
+        },
+        {
+          id: "cs-4",
+          cat: "case",
+          name: "Cooler Master TD500",
+          brand: "Cooler Master",
+          price: 8990,
+          stock: 6,
+          formFactor: "ATX",
+          maxGpu: 410,
+          rating: 4.8,
+          reviews: 57,
+          desc: "Просторный корпус с сетчатой фронтальной панелью и хорошим продувом.",
+        },
+
+        /* ---------- Охлаждение ---------- */
+        {
+          id: "cl-1",
+          cat: "cooling",
+          name: "Deepcool AK400",
+          brand: "Deepcool",
+          price: 2400,
+          stock: 24,
+          sockets: ["AM4", "LGA1700"],
+          tdp: 120,
+          ctype: "Воздушное",
+          rating: 4.8,
+          reviews: 187,
+          desc: "Тихий башенный кулер, справляется с большинством процессоров среднего класса.",
+        },
+        {
+          id: "cl-2",
+          cat: "cooling",
+          name: "Noctua NH-D15",
+          brand: "Noctua",
+          price: 8990,
+          stock: 5,
+          sockets: ["AM4", "LGA1700"],
+          tdp: 220,
+          ctype: "Воздушное",
+          rating: 5.0,
+          reviews: 74,
+          desc: "Двухбашенный флагман воздушного охлаждения. Сравним с СЖО по эффективности.",
+        },
+        {
+          id: "cl-3",
+          cat: "cooling",
+          name: "Arctic Freezer 34 eSports",
+          brand: "Arctic",
+          price: 3490,
+          stock: 14,
+          sockets: ["AM4", "LGA1700"],
+          tdp: 150,
+          ctype: "Воздушное",
+          rating: 4.7,
+          reviews: 121,
+          desc: "Эффективный и недорогой кулер для игровых процессоров.",
+        },
+        {
+          id: "cl-4",
+          cat: "cooling",
+          name: "Deepcool LE500",
+          brand: "Deepcool",
+          price: 5490,
+          stock: 8,
+          sockets: ["AM4", "LGA1700"],
+          tdp: 180,
+          ctype: "СЖО 240 мм",
+          rating: 4.6,
+          reviews: 63,
+          desc: "Компактная система жидкостного охлаждения с подсветкой.",
+        },
+      ];
+
+      const byId = (id) => COMPONENTS.find((c) => c.id === id);
+      const money = (n) => new Intl.NumberFormat("ru-RU").format(n) + " ₽";
+      const esc = (s) =>
+        String(s).replace(
+          /[&<>"']/g,
+          (m) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[m],
+        );
+
+      /* ---------------------------- ХРАНИЛИЩЕ -------------------------------- */
+      const LS = {
+        get(k, def) {
+          try {
+            const v = localStorage.getItem(k);
+            return v ? JSON.parse(v) : def;
+          } catch (e) {
+            return def;
+          }
+        },
+        set(k, v) {
+          try {
+            localStorage.setItem(k, JSON.stringify(v));
+          } catch (e) {}
+        },
+      };
+
+      const state = {
+        page: "home",
+        filters: {
+          cats: [],
+          brands: [],
+          min: null,
+          max: null,
+          inStock: false,
+          q: "",
+          sort: "popular",
+        },
+        cart: LS.get("pcb_cart", []),
+        build: LS.get("pcb_build", {}),
+        users: LS.get("pcb_users", []),
+        user: LS.get("pcb_user", null),
+        favorites: LS.get("pcb_fav", []),
+      };
+
+      function saveCart() {
+        LS.set("pcb_cart", state.cart);
+      }
+      function saveBuild() {
+        LS.set("pcb_build", state.build);
+      }
+      function saveUsers() {
+        LS.set("pcb_users", state.users);
+      }
+      function saveUser() {
+        LS.set("pcb_user", state.user);
+      }
+      function saveFav() {
+        LS.set("pcb_fav", state.favorites);
+      }
+
+      /* ------------------------------ УТИЛИТЫ -------------------------------- */
+      function toast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        clearTimeout(t._tm);
+        t._tm = setTimeout(() => t.classList.remove("show"), 2400);
+      }
+
+      function openModal(html) {
+        document.getElementById("modalBody").innerHTML = html;
+        document.getElementById("modal").classList.add("active");
+      }
+      function closeModal() {
+        document.getElementById("modal").classList.remove("active");
+        document.getElementById("modalBody").innerHTML = "";
+      }
+      document.getElementById("modal").addEventListener("click", (e) => {
+        if (e.target.id === "modal") closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      function stars(rating) {
+        const full = Math.round(rating);
+        return "★".repeat(full) + "☆".repeat(5 - full);
+      }
+
+      /* --------------------------- СОВМЕСТИМОСТЬ ----------------------------- */
+      const FF_ORDER = { "Mini-ITX": 0, mATX: 1, ATX: 2 };
+
+      function formFactorFits(caseFF, mbFF) {
+        return (FF_ORDER[caseFF] ?? -1) >= (FF_ORDER[mbFF] ?? 99);
+      }
+
+      function buildParts() {
+        const b = state.build;
+        const out = {};
+        for (const k in b) {
+          if (b[k]) out[k] = byId(b[k]);
+        }
+        return out;
+      }
+
+      function totalTdp() {
+        const p = buildParts();
+        let t = 0;
+        if (p.cpu) t += p.cpu.tdp;
+        if (p.gpu) t += p.gpu.tdp;
+        t += 60; // материнская плата, накопители, вентиляторы
+        return t;
+      }
+
+      function recommendedPsu() {
+        const need = Math.ceil((totalTdp() * 1.3) / 50) * 50;
+        return Math.max(need, 400);
+      }
+
+      function checkCompatibility() {
+        const p = buildParts();
+        const issues = [];
+
+        if (p.cpu && p.motherboard && p.cpu.socket !== p.motherboard.socket)
+          issues.push(
+            `Сокет процессора (${p.cpu.socket}) не совпадает с сокетом материнской платы (${p.motherboard.socket}).`,
+          );
+
+        if (
+          p.ram &&
+          p.motherboard &&
+          !p.motherboard.ramType.includes(p.ram.ramType)
+        )
+          issues.push(
+            `Материнская плата поддерживает ${p.motherboard.ramType.join("/")}, а память — ${p.ram.ramType}.`,
+          );
+
+        if (
+          p.motherboard &&
+          p.case &&
+          !formFactorFits(p.case.formFactor, p.motherboard.formFactor)
+        )
+          issues.push(
+            `Форм-фактор платы ${p.motherboard.formFactor} не помещается в корпус ${p.case.formFactor}.`,
+          );
+
+        if (p.cooling && p.cpu && !p.cooling.sockets.includes(p.cpu.socket))
+          issues.push(`Кулер не поддерживает сокет ${p.cpu.socket}.`);
+
+        if (p.cooling && p.cpu && p.cooling.tdp < p.cpu.tdp)
+          issues.push(
+            `Кулер рассчитан на ${p.cooling.tdp} Вт, а процессор выделяет ${p.cpu.tdp} Вт.`,
+          );
+
+        if (p.gpu && p.case && p.case.maxGpu && p.gpu.length > p.case.maxGpu)
+          issues.push(
+            `Длина видеокарты ${p.gpu.length} мм превышает допустимые ${p.case.maxGpu} мм.`,
+          );
+
+        if (p.psu && (p.cpu || p.gpu)) {
+          const need = recommendedPsu();
+          if (p.psu.watt < need)
+            issues.push(
+              `Мощности блока питания (${p.psu.watt} Вт) недостаточно: рекомендуется не менее ${need} Вт.`,
+            );
+        }
+
+        return issues;
+      }
+
+      /* ------------------------------ КОРЗИНА -------------------------------- */
+      function cartQty() {
+        return state.cart.reduce((s, i) => s + i.qty, 0);
+      }
+      function cartTotal() {
+        return state.cart.reduce(
+          (s, i) => s + (byId(i.id)?.price || 0) * i.qty,
+          0,
+        );
+      }
+
+      function addToCart(id, qty = 1) {
+        const comp = byId(id);
+        if (!comp) return;
+        if (comp.stock === 0) {
+          toast("Товара нет в наличии");
+          return;
+        }
+        const item = state.cart.find((i) => i.id === id);
+        if (item) {
+          if (item.qty + qty > comp.stock) {
+            toast("Больше нет на складе");
+            return;
+          }
+          item.qty += qty;
+        } else {
+          state.cart.push({ id, qty });
+        }
+        saveCart();
+        updateCartBadge();
+        toast(`«${comp.name}» добавлен в корзину`);
+        if (state.page === "cart") render();
+      }
+
+      function setQty(id, qty) {
+        const item = state.cart.find((i) => i.id === id);
+        if (!item) return;
+        const comp = byId(id);
+        if (qty <= 0) {
+          state.cart = state.cart.filter((i) => i.id !== id);
+        } else {
+          item.qty = Math.min(qty, comp.stock);
+        }
+        saveCart();
+        updateCartBadge();
+        if (state.page === "cart") render();
+      }
+
+      function removeFromCart(id) {
+        state.cart = state.cart.filter((i) => i.id !== id);
+        saveCart();
+        updateCartBadge();
+        if (state.page === "cart") render();
+        toast("Товар удалён из корзины");
+      }
+
+      function updateCartBadge() {
+        document.getElementById("cartCount").textContent = cartQty();
+      }
+
+      /* ------------------------------- СБОРКА -------------------------------- */
+      function setBuildPart(cat, id) {
+        if (id === null) delete state.build[cat];
+        else state.build[cat] = id;
+        saveBuild();
+        render();
+        closeModal();
+      }
+
+      function clearBuild() {
+        state.build = {};
+        saveBuild();
+        render();
+        toast("Сборка сброшена");
+      }
+
+      /* ------------------------------ ФИЛЬТРЫ -------------------------------- */
+      function filtered() {
+        const f = state.filters;
+        let list = COMPONENTS.slice();
+
+        if (f.cats.length) list = list.filter((c) => f.cats.includes(c.cat));
+        if (f.brands.length)
+          list = list.filter((c) => f.brands.includes(c.brand));
+        if (f.min != null && f.min !== "")
+          list = list.filter((c) => c.price >= +f.min);
+        if (f.max != null && f.max !== "")
+          list = list.filter((c) => c.price <= +f.max);
+        if (f.inStock) list = list.filter((c) => c.stock > 0);
+
+        if (f.q) {
+          const q = f.q.toLowerCase().trim();
+          list = list.filter((c) =>
+            (c.name + " " + c.brand + " " + catName(c.cat))
+              .toLowerCase()
+              .includes(q),
+          );
+        }
+
+        switch (f.sort) {
+          case "price-asc":
+            list.sort((a, b) => a.price - b.price);
+            break;
+          case "price-desc":
+            list.sort((a, b) => b.price - a.price);
+            break;
+          case "name":
+            list.sort((a, b) => a.name.localeCompare(b.name, "ru"));
+            break;
+          case "rating":
+            list.sort((a, b) => b.rating - a.rating);
+            break;
+          default:
+            list.sort((a, b) => b.rating * b.reviews - a.rating * a.reviews);
+        }
+        return list;
+      }
+
+      /* ============================ КОМПОНЕНТЫ UI ============================= */
+      function productCard(c) {
+        const fav = state.favorites.includes(c.id);
+        return `
+  <div class="card">
+    <button class="card-fav ${fav ? "on" : ""}" onclick="toggleFav('${c.id}')" title="В избранное">${fav ? "♥" : "♡"}</button>
+    <div class="card-img" onclick="openProduct('${c.id}')">${catIcon(c.cat)}</div>
+    <div class="card-brand">${esc(c.brand)}</div>
+    <div class="card-name" onclick="openProduct('${c.id}')">${esc(c.name)}</div>
+    <div class="card-rating">${stars(c.rating)} <i>(${c.reviews})</i></div>
+    <div class="card-price">${money(c.price)}</div>
+    <div class="card-stock ${c.stock > 0 ? "in-stock" : "no-stock"}">
+      ${c.stock > 0 ? "● В наличии (" + c.stock + " шт.)" : "● Нет в наличии"}
+    </div>
+    <button class="btn btn-primary btn-block" ${c.stock === 0 ? "disabled" : ""}
+      onclick="addToCart('${c.id}')">В корзину</button>
+  </div>`;
+      }
+
+      function toggleFav(id) {
+        const i = state.favorites.indexOf(id);
+        if (i >= 0) state.favorites.splice(i, 1);
+        else state.favorites.push(id);
+        saveFav();
+        render();
+      }
+
+      /* ============================== СТРАНИЦЫ =============================== */
+
+      /* ---------- Главная ---------- */
+      function pageHome() {
+        const hits = COMPONENTS.slice()
+          .sort((a, b) => b.rating * b.reviews - a.rating * a.reviews)
+          .slice(0, 8);
+        return `
+  <section class="page active">
+    <div class="hero">
+      <h1>Собери свой идеальный ПК</h1>
+      <p>Каталог комплектующих с автоматической проверкой совместимости.
+         Подбирай детали, сравнивай характеристики и собирай сборку без ошибок.</p>
+      <button class="btn btn-primary" data-nav="catalog">Перейти в каталог</button>
+      <div class="hero-feats">
+        <div class="hero-feat"><div class="ic">🔧</div>
+          <div><b>Проверка совместимости</b><small>Сокет, память, мощность БП и форм-фактор</small></div></div>
+        <div class="hero-feat"><div class="ic">📦</div>
+          <div><b>Более 30 позиций</b><small>Процессоры, видеокарты, память и другое</small></div></div>
+        <div class="hero-feat"><div class="ic">💰</div>
+          <div><b>Честные цены</b><small>Итоговая стоимость сборки в реальном времени</small></div></div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Популярные категории</h2>
+    <div class="cat-grid">
+      ${CATEGORIES.map(
+        (c) => `
+        <div class="cat-tile" onclick="goCategory('${c.id}')">
+          <span class="ic">${c.icon}</span><span>${c.name}</span>
+        </div>`,
+      ).join("")}
+    </div>
+
+    <h2 class="section-title">Хиты продаж
+      <a class="link" data-nav="catalog">Все товары →</a></h2>
+    <div class="grid">${hits.map(productCard).join("")}</div>
+  </section>`;
+      }
+
+      /* ---------- Каталог ---------- */
+      function pageCatalog() {
+        const f = state.filters;
+        const list = filtered();
+
+        const brands = [
+          ...new Set(
+            COMPONENTS.filter(
+              (c) => f.cats.length === 0 || f.cats.includes(c.cat),
+            ).map((c) => c.brand),
+          ),
+        ].sort();
+
+        const catCount = (id) => COMPONENTS.filter((c) => c.cat === id).length;
+
+        return `
+  <section class="page active">
+    <div class="cat-layout">
+      <aside class="sidebar">
+        <div class="filter-block">
+          <div class="filter-title">Категории</div>
+          ${CATEGORIES.map(
+            (c) => `
+            <label class="check">
+              <input type="checkbox" ${f.cats.includes(c.id) ? "checked" : ""}
+                onchange="toggleFilter('cats','${c.id}')">
+              <span>${c.icon} ${c.name}</span>
+              <span class="count">${catCount(c.id)}</span>
+            </label>`,
+          ).join("")}
+        </div>
+
+        <div class="filter-block">
+          <div class="filter-title">Цена, ₽</div>
+          <div class="price-row">
+            <input type="number" placeholder="от 1000" value="${f.min ?? ""}"
+              onchange="setPrice('min', this.value)">
+            <span style="color:var(--muted)">—</span>
+            <input type="number" placeholder="до 100000" value="${f.max ?? ""}"
+              onchange="setPrice('max', this.value)">
+          </div>
+        </div>
+
+        <div class="filter-block">
+          <div class="filter-title">Бренд</div>
+          ${brands
+            .map(
+              (b) => `
+            <label class="check">
+              <input type="checkbox" ${f.brands.includes(b) ? "checked" : ""}
+                onchange="toggleFilter('brands','${esc(b)}')">
+              <span>${esc(b)}</span>
+            </label>`,
+            )
+            .join("")}
+        </div>
+
+        <div class="filter-block">
+          <div class="filter-title">Наличие</div>
+          <label class="check">
+            <input type="checkbox" ${f.inStock ? "checked" : ""}
+              onchange="toggleFilter('inStock', null)">
+            <span>Только в наличии</span>
+          </label>
+        </div>
+
+        <button class="btn btn-outline btn-block btn-sm" onclick="resetFilters()">Сбросить фильтры</button>
+      </aside>
+
+      <div>
+        <div class="toolbar">
+          <div class="count">Найдено товаров: <b>${list.length}</b>
+            ${f.q ? " по запросу «" + esc(f.q) + "»" : ""}</div>
+          <select onchange="state.filters.sort=this.value; render()">
+            <option value="popular" ${f.sort === "popular" ? "selected" : ""}>Сортировка: Популярные</option>
+            <option value="price-asc" ${f.sort === "price-asc" ? "selected" : ""}>Цена: по возрастанию</option>
+            <option value="price-desc" ${f.sort === "price-desc" ? "selected" : ""}>Цена: по убыванию</option>
+            <option value="rating" ${f.sort === "rating" ? "selected" : ""}>По рейтингу</option>
+            <option value="name" ${f.sort === "name" ? "selected" : ""}>По названию</option>
+          </select>
+        </div>
+        ${
+          list.length
+            ? `<div class="grid">${list.map(productCard).join("")}</div>`
+            : `<div class="empty"><div style="font-size:38px;margin-bottom:12px">🔍</div>
+               Ничего не найдено. Попробуйте изменить фильтры.</div>`
+        }
+      </div>
+    </div>
+  </section>`;
+      }
+
+      function toggleFilter(key, val) {
+        const f = state.filters;
+        if (key === "inStock") {
+          f.inStock = !f.inStock;
+        } else {
+          const arr = f[key];
+          const i = arr.indexOf(val);
+          if (i >= 0) arr.splice(i, 1);
+          else arr.push(val);
+        }
+        render();
+      }
+      function setPrice(key, val) {
+        state.filters[key] = val === "" ? null : +val;
+        render();
+      }
+      function resetFilters() {
+        state.filters = {
+          cats: [],
+          brands: [],
+          min: null,
+          max: null,
+          inStock: false,
+          q: "",
+          sort: "popular",
+        };
+        document.getElementById("globalSearch").value = "";
+        render();
+      }
+      function goCategory(cat) {
+        state.filters.cats = [cat];
+        state.filters.q = "";
+        document.getElementById("globalSearch").value = "";
+        go("catalog");
+      }
+
+      /* ---------- Страница сборки ---------- */
+      const BUILD_SLOTS = [
+        { key: "cpu", label: "Процессор" },
+        { key: "motherboard", label: "Материнская плата" },
+        { key: "gpu", label: "Видеокарта" },
+        { key: "ram", label: "Оперативная память" },
+        { key: "storage", label: "Накопитель" },
+        { key: "psu", label: "Блок питания" },
+        { key: "case", label: "Корпус" },
+        { key: "cooling", label: "Охлаждение процессора" },
+      ];
+
+      function pageBuild() {
+        const p = buildParts();
+        const issues = checkCompatibility();
+        const total = Object.values(p).reduce((s, c) => s + c.price, 0);
+        const selectedCount = Object.keys(p).length;
+
+        const slotHtml = BUILD_SLOTS.map((s) => {
+          const comp = p[s.key];
+          return `
+    <div class="slot">
+      <div class="slot-ic">${catIcon(s.key)}</div>
+      <div class="slot-body">
+        <div class="slot-label">${s.label}</div>
+        <div class="slot-name ${comp ? "" : "empty-name"}">${comp ? esc(comp.name) : "Компонент не выбран"}</div>
+      </div>
+      ${
+        comp
+          ? `<div class="slot-price">${money(comp.price)}</div>
+                <button class="btn btn-sm btn-danger" onclick="setBuildPart('${s.key}', null)">Убрать</button>`
+          : ""
+      }
+      <button class="btn btn-sm ${comp ? "btn-outline" : "btn-ghost"}"
+        onclick="openPicker('${s.key}')">${comp ? "Заменить" : "Выбрать"}</button>
+    </div>`;
+        }).join("");
+
+        return `
+  <section class="page active">
+    <h2 class="section-title">Сборка ПК
+      <button class="btn btn-outline btn-sm" onclick="clearBuild()">Сбросить сборку</button>
+    </h2>
+
+    <div class="build-layout">
+      <div>${slotHtml}</div>
+
+      <div class="summary">
+        <div style="font-weight:700;font-size:16px;margin-bottom:12px">Итого</div>
+        <div class="summary-row"><span>Выбрано компонентов</span><b>${selectedCount} из ${BUILD_SLOTS.length}</b></div>
+        <div class="summary-row"><span>Потребление</span><b>≈ ${totalTdp()} Вт</b></div>
+        <div class="summary-row"><span>Рекомендуемый БП</span><b>${recommendedPsu()} Вт</b></div>
+        <div class="summary-total"><span>Стоимость</span><b>${money(total)}</b></div>
+
+        ${
+          selectedCount === 0
+            ? `<div class="compat" style="background:#f2f5fa;color:#4a5164;margin-top:16px">
+               Выберите компоненты, чтобы проверить совместимость.</div>`
+            : issues.length === 0
+              ? `<div class="compat ok">✅ Все выбранные компоненты совместимы.</div>`
+              : `<div class="compat bad"><b>⚠ Найдены несовместимости:</b>
+                 <ul>${issues.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`
+        }
+
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:18px">
+          <button class="btn btn-primary btn-block" ${selectedCount === 0 ? "disabled" : ""}
+            onclick="addBuildToCart()">Добавить сборку в корзину</button>
+          <button class="btn btn-outline btn-block" ${selectedCount === 0 ? "disabled" : ""}
+            onclick="addBuildToCart(true)">Купить в один клик</button>
+        </div>
+      </div>
+    </div>
+  </section>`;
+      }
+
+      function openPicker(cat) {
+        const items = COMPONENTS.filter((c) => c.cat === cat);
+        const cur = state.build[cat];
+
+        const rows = items
+          .map((c) => {
+            const problems = compatibilityOf(cat, c);
+            const disabled = problems.length > 0;
+            return `
+    <div class="picker-row ${disabled ? "disabled" : ""}">
+      <div class="ic">${catIcon(cat)}</div>
+      <div class="txt">
+        <b>${esc(c.name)}</b>
+        <small>${esc(c.brand)} · ${shortSpec(c)} ${c.stock === 0 ? "· нет в наличии" : ""}
+          ${disabled ? '· <span style="color:#e5484d">' + esc(problems[0]) + "</span>" : ""}</small>
+      </div>
+      <div class="pr">${money(c.price)}</div>
+      <button class="btn btn-sm ${cur === c.id ? "btn-primary" : "btn-outline"}"
+        ${disabled || c.stock === 0 ? "disabled" : ""}
+        onclick="setBuildPart('${cat}','${c.id}')">${cur === c.id ? "Выбрано" : "Выбрать"}</button>
+    </div>`;
+          })
+          .join("");
+
+        openModal(`
+    <h3 style="font-size:20px;font-weight:700">Выбор: ${catName(cat)}</h3>
+    <p style="color:var(--muted);font-size:13px;margin-top:6px">
+      Несовместимые с уже выбранными компонентами позиции отмечены серым.</p>
+    <div class="picker-list">${rows}</div>
+  `);
+      }
+
+      function compatibilityOf(cat, comp) {
+        const p = buildParts();
+        const problems = [];
+
+        if (cat === "cpu") {
+          if (p.motherboard && p.motherboard.socket !== comp.socket)
+            problems.push("не подходит сокет");
+          if (p.ram && !comp.ramType.includes(p.ram.ramType))
+            problems.push("не поддерживает выбранную память");
+          if (p.cooling && !p.cooling.sockets.includes(comp.socket))
+            problems.push("кулер не поддерживает сокет");
+        }
+        if (cat === "motherboard") {
+          if (p.cpu && p.cpu.socket !== comp.socket)
+            problems.push("сокет не совпадает с процессором");
+          if (p.ram && !comp.ramType.includes(p.ram.ramType))
+            problems.push("не поддерживает выбранную память");
+          if (p.case && !formFactorFits(p.case.formFactor, comp.formFactor))
+            problems.push("не помещается в корпус");
+        }
+        if (cat === "ram") {
+          if (p.motherboard && !p.motherboard.ramType.includes(comp.ramType))
+            problems.push("не подходит к материнской плате");
+          if (p.cpu && !p.cpu.ramType.includes(comp.ramType))
+            problems.push("не поддерживается процессором");
+        }
+        if (cat === "gpu") {
+          if (p.case && comp.length > p.case.maxGpu)
+            problems.push("слишком длинная для корпуса");
+        }
+        if (cat === "cooling") {
+          if (p.cpu && !comp.sockets.includes(p.cpu.socket))
+            problems.push("не поддерживает сокет процессора");
+          if (p.cpu && comp.tdp < p.cpu.tdp)
+            problems.push("недостаточная мощность охлаждения");
+        }
+        if (cat === "case") {
+          if (
+            p.motherboard &&
+            !formFactorFits(comp.formFactor, p.motherboard.formFactor)
+          )
+            problems.push("не подходит форм-фактор платы");
+          if (p.gpu && p.gpu.length > comp.maxGpu)
+            problems.push("видеокарта не поместится");
+        }
+        if (cat === "psu") {
+          const need = recommendedPsu();
+          if (comp.watt < need) problems.push("мощности может не хватить");
+        }
+        return problems;
+      }
+
+      function shortSpec(c) {
+        switch (c.cat) {
+          case "cpu":
+            return `${c.cores} ядер · ${c.socket} · ${c.tdp} Вт`;
+          case "gpu":
+            return `${c.memory} ГБ ${c.memType} · ${c.tdp} Вт`;
+          case "motherboard":
+            return `${c.socket} · ${c.ramType.join("/")} · ${c.formFactor}`;
+          case "ram":
+            return `${c.capacity} ГБ ${c.ramType}-${c.speed}`;
+          case "storage":
+            return `${c.capacity} ГБ · ${c.stype}`;
+          case "psu":
+            return `${c.watt} Вт · ${c.cert}`;
+          case "case":
+            return `${c.formFactor} · до ${c.maxGpu} мм`;
+          case "cooling":
+            return `${c.ctype} · до ${c.tdp} Вт`;
+          default:
+            return "";
+        }
+      }
+
+      function addBuildToCart(buyNow) {
+        const p = buildParts();
+        const issues = checkCompatibility();
+        if (issues.length) {
+          toast("Сборка содержит несовместимые компоненты");
+          return;
+        }
+        Object.values(p).forEach((c) => {
+          const item = state.cart.find((i) => i.id === c.id);
+          if (item) item.qty += 1;
+          else state.cart.push({ id: c.id, qty: 1 });
+        });
+        saveCart();
+        updateCartBadge();
+        if (buyNow) {
+          go("cart");
+          toast("Сборка добавлена. Оформите заказ.");
+        } else {
+          toast("Сборка добавлена в корзину");
+        }
+      }
+
+      /* ---------- Корзина ---------- */
+      function pageCart() {
+        if (state.cart.length === 0) {
+          return `
+    <section class="page active">
+      <h2 class="section-title">Корзина</h2>
+      <div class="empty">
+        <div style="font-size:44px;margin-bottom:14px">🛒</div>
+        <p style="margin-bottom:18px">Корзина пуста</p>
+        <button class="btn btn-primary" data-nav="catalog">Перейти в каталог</button>
+      </div>
+    </section>`;
+        }
+
+        const rows = state.cart
+          .map((item) => {
+            const c = byId(item.id);
+            if (!c) return "";
+            return `
+    <div class="cart-item">
+      <div class="thumb">${catIcon(c.cat)}</div>
+      <div class="info">
+        <b>${esc(c.name)}</b>
+        <small>${catName(c.cat)} · ${esc(c.brand)}</small>
+      </div>
+      <div class="qty">
+        <button onclick="setQty('${c.id}', ${item.qty - 1})">−</button>
+        <span>${item.qty}</span>
+        <button onclick="setQty('${c.id}', ${item.qty + 1})">+</button>
+      </div>
+      <div class="sum">${money(c.price * item.qty)}</div>
+      <button class="btn btn-sm btn-danger" onclick="removeFromCart('${c.id}')">✕</button>
+    </div>`;
+          })
+          .join("");
+
+        return `
+  <section class="page active">
+    <h2 class="section-title">Корзина</h2>
+    <div class="cart-layout">
+      <div>${rows}</div>
+      <div class="summary">
+        <div style="font-weight:700;font-size:16px;margin-bottom:12px">Итого</div>
+        <div class="summary-row"><span>Товаров</span><b>${cartQty()} шт.</b></div>
+        <div class="summary-row"><span>Доставка</span><b>Курьером, 1–2 дня</b></div>
+        <div class="summary-total"><span>Сумма</span><b>${money(cartTotal())}</b></div>
+        <button class="btn btn-primary btn-block" style="margin-top:18px"
+          onclick="checkout()">Оформить заказ</button>
+        <button class="btn btn-outline btn-block" style="margin-top:9px"
+          data-nav="catalog">Продолжить покупки</button>
+      </div>
+    </div>
+  </section>`;
+      }
+
+      function checkout() {
+        if (!state.user) {
+          toast("Войдите в аккаунт, чтобы оформить заказ");
+          go("auth");
+          return;
+        }
+        const total = cartTotal();
+        const num = "PB-" + Date.now().toString().slice(-6);
+        state.cart = [];
+        saveCart();
+        updateCartBadge();
+        openModal(`
+    <div style="text-align:center;padding:20px 10px">
+      <div style="font-size:52px;margin-bottom:14px">✅</div>
+      <h3 style="font-size:21px;font-weight:700;margin-bottom:8px">Заказ оформлен</h3>
+      <p style="color:var(--muted);margin-bottom:6px">Номер заказа: <b>${num}</b></p>
+      <p style="color:var(--muted);margin-bottom:22px">Сумма: <b>${money(total)}</b></p>
+      <button class="btn btn-primary" onclick="closeModal(); go('catalog')">Вернуться в каталог</button>
+    </div>
+  `);
+        render();
+      }
+
+      /* ---------- Карточка товара ---------- */
+      function openProduct(id) {
+        const c = byId(id);
+        if (!c) return;
+
+        const specs = Object.entries({
+          Категория: catName(c.cat),
+          Бренд: c.brand,
+          Наличие: c.stock > 0 ? `${c.stock} шт.` : "нет в наличии",
+          ...specLines(c),
+        })
+          .map(([k, v]) => `<tr><td>${k}</td><td>${esc(v)}</td></tr>`)
+          .join("");
+
+        openModal(`
+    <div class="pd">
+      <div>
+        <div class="pd-img">${catIcon(c.cat)}</div>
+      </div>
+      <div>
+        <h2>${esc(c.name)}</h2>
+        <div class="rating">${stars(c.rating)} <i>${c.rating} · ${c.reviews} отзывов</i></div>
+        <div class="price">${money(c.price)}</div>
+        <div class="${c.stock > 0 ? "in-stock" : "no-stock"}">
+          ${c.stock > 0 ? "● В наличии" : "● Нет в наличии"}
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" ${c.stock === 0 ? "disabled" : ""}
+            onclick="addToCart('${c.id}'); closeModal();">Добавить в корзину</button>
+          <button class="btn btn-outline" onclick="addToBuildFromModal('${c.id}')">В сборку</button>
+        </div>
+        <div class="tabs"><button class="active">Описание</button><button>Характеристики</button></div>
+        <p style="margin-top:16px;color:#454c60">${esc(c.desc)}</p>
+        <table class="spec-table">${specs}</table>
+      </div>
+    </div>
+  `);
+      }
+
+      function specLines(c) {
+        switch (c.cat) {
+          case "cpu":
+            return {
+              Сокет: c.socket,
+              "Ядра / потоки": `${c.cores} / ${c.threads}`,
+              "Базовая частота": c.freq + " ГГц",
+              TDP: c.tdp + " Вт",
+              "Тип памяти": c.ramType.join("/"),
+            };
+          case "gpu":
+            return {
+              Видеопамять: c.memory + " ГБ",
+              "Тип памяти": c.memType,
+              Энергопотребление: c.tdp + " Вт",
+              Длина: c.length + " мм",
+            };
+          case "motherboard":
+            return {
+              Сокет: c.socket,
+              "Тип памяти": c.ramType.join("/"),
+              "Форм-фактор": c.formFactor,
+            };
+          case "ram":
+            return {
+              Тип: c.ramType,
+              Объём: c.capacity + " ГБ",
+              Частота: c.speed + " МГц",
+              Модулей: c.modules,
+            };
+          case "storage":
+            return {
+              Тип: c.stype,
+              Объём: c.capacity + " ГБ",
+              Интерфейс: c.iface,
+              "Скорость чтения": c.read + " МБ/с",
+            };
+          case "psu":
+            return {
+              Мощность: c.watt + " Вт",
+              Сертификат: c.cert,
+              Модульный: c.modular,
+            };
+          case "case":
+            return {
+              "Форм-фактор": c.formFactor,
+              "Макс. длина GPU": c.maxGpu + " мм",
+            };
+          case "cooling":
+            return {
+              Тип: c.ctype,
+              "Поддержка сокетов": c.sockets.join(", "),
+              "Рассеиваемая мощность": c.tdp + " Вт",
+            };
+          default:
+            return {};
+        }
+      }
+
+      function addToBuildFromModal(id) {
+        const c = byId(id);
+        if (!c) return;
+        const problems = compatibilityOf(c.cat, c);
+        if (problems.length) {
+          toast("Несовместимо: " + problems[0]);
+          return;
+        }
+        setBuildPart(c.cat, id);
+        toast(`«${c.name}» добавлен в сборку`);
+        go("build");
+      }
+
+      /* ---------- Авторизация ---------- */
+      let authMode = "login";
+
+      function pageAuth() {
+        return `
+  <section class="page active">
+    <div class="auth-layout">
+      <div class="auth-side">
+        <h2>Собирай компьютер своей мечты</h2>
+        <p>Зарегистрируйтесь, чтобы сохранять сборки, отслеживать заказы
+           и получать персональные рекомендации.</p>
+        <div class="auth-feat"><div class="ic">💾</div>
+          <div><b>Сохраняйте сборки ПК</b><small>Ваши конфигурации всегда под рукой</small></div></div>
+        <div class="auth-feat"><div class="ic">🏷️</div>
+          <div><b>Узнавайте о скидках</b><small>Персональные предложения и акции</small></div></div>
+        <div class="auth-feat"><div class="ic">⚡</div>
+          <div><b>Быстрый заказ</b><small>Оформление заказа в один клик</small></div></div>
+      </div>
+      <div class="auth-form" id="authForm">${authFormHtml()}</div>
+    </div>
+  </section>`;
+      }
+
+      function authFormHtml() {
+        if (state.user) {
+          return `
+      <h3>Личный кабинет</h3>
+      <p class="sub">Вы вошли как <b>${esc(state.user.name)}</b> (${esc(state.user.email)})</p>
+      <div class="field"><label>Сохранённая сборка</label>
+        <div style="color:var(--muted);font-size:13px">
+          ${Object.keys(state.build).length} компонентов выбрано
+        </div>
+      </div>
+      <button class="btn btn-outline btn-block" onclick="logout()">Выйти из аккаунта</button>`;
+        }
+
+        if (authMode === "login") {
+          return `
+      <h3>Вход в аккаунт</h3>
+      <p class="sub">Рады видеть вас снова! Войдите, чтобы продолжить.</p>
+      <div class="field" id="f-login">
+        <label>Email</label>
+        <input type="text" id="loginEmail" placeholder="Введите email">
+        <div class="err">Введите email</div>
+      </div>
+      <div class="field" id="f-pass">
+        <label>Пароль</label>
+        <input type="password" id="loginPass" placeholder="Введите пароль">
+        <div class="err">Введите пароль</div>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="doLogin()">Войти</button>
+      <div class="switch-line">Уже есть аккаунт?
+        <a onclick="authMode='register'; render()">Зарегистрироваться</a></div>`;
+        }
+
+        return `
+    <h3>Регистрация</h3>
+    <p class="sub">Создайте аккаунт, чтобы получить доступ ко всем возможностям сайта.</p>
+    <div class="field" id="f-name">
+      <label>Имя</label>
+      <input type="text" id="regName" placeholder="Введите ваше имя">
+      <div class="err">Имя должно содержать минимум 2 символа</div>
+    </div>
+    <div class="field" id="f-email">
+      <label>Email</label>
+      <input type="text" id="regEmail" placeholder="Введите email">
+      <div class="err">Введите корректный email</div>
+    </div>
+    <div class="field" id="f-pass1">
+      <label>Пароль</label>
+      <input type="password" id="regPass" placeholder="Придумайте пароль">
+      <div class="err">Пароль должен быть не короче 6 символов</div>
+    </div>
+    <div class="field" id="f-pass2">
+      <label>Подтверждение пароля</label>
+      <input type="password" id="regPass2" placeholder="Повторите пароль">
+      <div class="err">Пароли не совпадают</div>
+    </div>
+    <button class="btn btn-primary btn-block" onclick="doRegister()">Зарегистрироваться</button>
+    <div class="switch-line">Уже есть аккаунт?
+      <a onclick="authMode='login'; render()">Войти</a></div>`;
+      }
+
+      function mark(id, ok) {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle("invalid", !ok);
+        return ok;
+      }
+
+      function doLogin() {
+        const email = document.getElementById("loginEmail").value.trim();
+        const pass = document.getElementById("loginPass").value;
+
+        const okEmail = mark("f-login", email.length > 0);
+        const okPass = mark("f-pass", pass.length > 0);
+        if (!okEmail || !okPass) return;
+
+        const u = state.users.find(
+          (x) =>
+            x.email.toLowerCase() === email.toLowerCase() && x.pass === pass,
+        );
+        if (!u) {
+          toast("Неверный email или пароль");
+          mark("f-pass", false);
+          return;
+        }
+
+        state.user = { name: u.name, email: u.email };
+        saveUser();
+        updateUserLabel();
+        toast("Вы вошли в аккаунт");
+        render();
+      }
+
+      function doRegister() {
+        const name = document.getElementById("regName").value.trim();
+        const email = document.getElementById("regEmail").value.trim();
+        const pass = document.getElementById("regPass").value;
+        const pass2 = document.getElementById("regPass2").value;
+
+        const okName = mark("f-name", name.length >= 2);
+        const okEmail = mark(
+          "f-email",
+          /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email),
+        );
+        const okPass = mark("f-pass1", pass.length >= 6);
+        const okPass2 = mark("f-pass2", pass === pass2 && pass2.length > 0);
+        if (!(okName && okEmail && okPass && okPass2)) return;
+
+        if (
+          state.users.some((u) => u.email.toLowerCase() === email.toLowerCase())
+        ) {
+          toast("Пользователь с таким email уже существует");
+          mark("f-email", false);
+          return;
+        }
+
+        state.users.push({ name, email, pass });
+        saveUsers();
+        state.user = { name, email };
+        saveUser();
+        updateUserLabel();
+        toast("Регистрация завершена");
+        render();
+      }
+
+      function logout() {
+        state.user = null;
+        saveUser();
+        updateUserLabel();
+        toast("Вы вышли из аккаунта");
+        render();
+      }
+
+      function updateUserLabel() {
+        document.getElementById("userLabel").textContent = state.user
+          ? state.user.name
+          : "Войти / Регистрация";
+      }
+
+      /* ---------- О нас / Блог ---------- */
+      function pageAbout() {
+        return `
+  <section class="page active">
+    <div class="text-page">
+      <h2>О проекте</h2>
+      <p><b>PC Build</b> — учебный проект, демонстрирующий полный цикл разработки
+         веб-приложения: от исследования предметной области до работающего прототипа.</p>
+
+      <h3>Проблема</h3>
+      <p>При самостоятельной сборке ПК новичок сталкивается с разрозненной информацией:
+         характеристики комплектующих хранятся на разных сайтах, а совместимость приходится
+         проверять вручную. Ошибка в выборе сокета, типа памяти или мощности блока питания
+         приводит к покупке неподходящих деталей.</p>
+
+      <h3>Решение</h3>
+      <ul>
+        <li>Единый каталог комплектующих с фильтрами и поиском.</li>
+        <li>Пошаговый конфигуратор сборки с автоматической проверкой совместимости.</li>
+        <li>Расчёт итоговой стоимости и рекомендуемой мощности блока питания.</li>
+        <li>Корзина и оформление заказа.</li>
+      </ul>
+
+      <h3>Технологии</h3>
+      <p>HTML, CSS, JavaScript без внешних библиотек. Данные сохраняются в localStorage
+         браузера, поэтому выбор сборки и корзина не теряются при перезагрузке страницы.</p>
+
+      <h3>Важно</h3>
+      <p>Все товары, цены и отзывы вымышлены и созданы исключительно в учебных целях.
+         Реальные персональные данные не собираются и не хранятся.</p>
+    </div>
+  </section>`;
+      }
+
+      function pageBlog() {
+        const posts = [
+          {
+            ic: "🧩",
+            t: "Как выбрать процессор в 2025 году",
+            d: "Разбираем сокеты, ядра, потоки и то, за что действительно стоит платить.",
+          },
+          {
+            ic: "🎮",
+            t: "Видеокарта: сколько памяти нужно",
+            d: "8, 12 или 16 ГБ — что реально влияет на FPS в современных играх.",
+          },
+          {
+            ic: "⚡",
+            t: "Расчёт мощности блока питания",
+            d: "Простая формула, которая убережёт вас от перегрузки и переплаты.",
+          },
+          {
+            ic: "🔌",
+            t: "Совместимость: чек-лист сборки",
+            d: "Сокет, память, форм-фактор, длина GPU и высота кулера — по порядку.",
+          },
+          {
+            ic: "💾",
+            t: "NVMe или SATA: есть ли разница",
+            d: "Сравниваем скорость загрузки системы и игр на разных накопителях.",
+          },
+          {
+            ic: "❄️",
+            t: "Воздух или СЖО",
+            d: "Когда башенного кулера достаточно, а когда стоит смотреть на жидкость.",
+          },
+        ];
+        return `
+  <section class="page active">
+    <h2 class="section-title">Блог</h2>
+    <div class="blog-grid">
+      ${posts
+        .map(
+          (p) => `
+        <div class="blog-card">
+          <div class="cover">${p.ic}</div>
+          <div class="body"><h4>${p.t}</h4><p>${p.d}</p></div>
+        </div>`,
+        )
+        .join("")}
+    </div>
+  </section>`;
+      }
+
+      /* ============================== РОУТЕР ================================= */
+      function go(page) {
+        state.page = page;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        render();
+      }
+
+      function render() {
+        const app = document.getElementById("app");
+        let html = "";
+
+        switch (state.page) {
+          case "home":
+            html = pageHome();
+            break;
+          case "catalog":
+            html = pageCatalog();
+            break;
+          case "build":
+            html = pageBuild();
+            break;
+          case "cart":
+            html = pageCart();
+            break;
+          case "auth":
+            html = pageAuth();
+            break;
+          case "about":
+            html = pageAbout();
+            break;
+          case "blog":
+            html = pageBlog();
+            break;
+          default:
+            html = pageHome();
+        }
+        app.innerHTML = html;
+
+        document.querySelectorAll("#mainNav a").forEach((a) => {
+          a.classList.toggle("active", a.dataset.nav === state.page);
+        });
+        updateCartBadge();
+        updateUserLabel();
+      }
+
+      /* ------------------------- ГЛОБАЛЬНЫЕ ОБРАБОТЧИКИ ---------------------- */
+      document.addEventListener("click", (e) => {
+        const el = e.target.closest("[data-nav]");
+        if (el) {
+          go(el.dataset.nav);
+        }
+      });
+
+      document.getElementById("authBtn").addEventListener("click", () => {
+        authMode = state.user ? "login" : "login";
+        go("auth");
+      });
+
+      document.getElementById("globalSearch").addEventListener("input", (e) => {
+        state.filters.q = e.target.value;
+        if (state.page !== "catalog") state.page = "catalog";
+        render();
+        const inp = document.getElementById("globalSearch");
+        inp.focus();
+        inp.setSelectionRange(inp.value.length, inp.value.length);
+      });
+
+      /* ------------------------------- СТАРТ --------------------------------- */
+      render();
+    </script>
+  </body>
+</html>
